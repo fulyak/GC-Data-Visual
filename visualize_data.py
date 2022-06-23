@@ -3,7 +3,14 @@ import pandas as pd
 import numpy as np 
 
 # create dictionary that points parameters to column number
-def make_dict(file_name='mean_radial_velocities.dat'): 
+def make_dict(file_name): 
+	"""Make a dictionary
+	Creates a dictionary that maps parameter names to the corresponding index from the original data
+	Args:
+		file_name (string): data set name
+	Returns:
+		dictionary: maps parameter names to index 
+	"""
 	file = open(file_name, 'r')
 	param_names = pd.read_csv(file, nrows=1)
 	params_list = (param_names.iloc[0].index[0]).split( )
@@ -13,7 +20,7 @@ def make_dict(file_name='mean_radial_velocities.dat'):
 			params_list[i] = 'RAPO'
 		d[params_list[i]] = i
 	return d
-
+	
 def read_data(X,Y,file_name='mean_radial_velocities.dat'):
 	file = open(file_name,'r')
 	if Y != 'N/A':
@@ -39,7 +46,7 @@ def make_scatter(param1, param2, x, y):
 	plt.show()
 
 
-d = make_dict()
+d = make_dict('mean_radial_velocities.dat')
 print('What parameter(s) would you like to plot?')
 x = input()
 
