@@ -1,3 +1,27 @@
 # GC-Data-Visual
 
-Explain how this package is used.
+Overview
+==========
+
+This package takes the updated Baumgardt et al. 2021 Globular Cluster Catalog data (https://people.smp.uq.edu.au/HolgerBaumgardt/globular/) containing mean radial velocities, proper motion, and orbital parameters, of each globular cluster, and provides a quick visualization of any one or two parameters from that dataset.
+
+How To Use
+==========
+
+1) Install this package using:
+
+pip install GCDataVis
+
+2) Once you are in the directory of this package, enter the GCDataVis subdirectory:
+
+cd GCDataVis/
+
+3) Run Python on the visualize_data.py file.
+
+python visualize_data.py
+
+4) You will be prompted to enter parameters that you want to plot. Type in the one or two parameters you would like to plot, and make sure the spelling and capitalization is valid according to the following table. If you are only interested in seeing the distribution of one parameter, enter "N/A" for the second parameter when prompted. 
+
+Here is the table of valid parameters:
+
+
