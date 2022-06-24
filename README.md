@@ -12,13 +12,13 @@ First, install this package using:
 
 ``pip install GCDataVis``
 
-Once you are in the directory of this package, enter the GCDataVis subdirectory:
+Once have successfully installed the package, import the package in iPython:
 
-``cd GCDataVis/``
+``import GCDataVis``
 
-Run Python on the visualize_data.py file.
+Import the visualize_data.py file from the package.
 
-``python visualize_data.py``
+``from GCDataVis import visualize_data.py``
 
 You will be prompted to enter parameters that you want to plot. Type in the one or two parameters you would like to plot, and make sure the spelling and capitalization is valid according to the following table. If you are only interested in seeing the distribution of one parameter, enter "N/A" for the second parameter when prompted. 
 
@@ -43,6 +43,6 @@ Here is the table of valid parameters:
 | V        |Velocity in Y direction                                       |
 | W        |Velocity in Z direction                                       |
 | RPERI    |Average perigalactic distance                                 |
-| RAPO     |AVerage apogalactic distance                                  |
+| RAPO     |Average apogalactic distance                                  |
 
    
