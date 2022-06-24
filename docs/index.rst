@@ -9,8 +9,8 @@ Welcome to GC-Data-Visual's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   visualize.rst
 
+   visualize.rst
 
 Indices and tables
 ==================
