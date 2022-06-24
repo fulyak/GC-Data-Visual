@@ -24,15 +24,10 @@ You will be prompted to enter parameters that you want to plot. Type in the one 
 
 Here is the table of valid parameters:
 
-.. list-table:: Valid Parameters
-   :widths: 25, 50
-   :header-rows: 0
+| Name   |Meaning           |
+| ------ |------------------|
+| RA     |Right ascension   |
+| DEC    |Declination       |
+| l      |Galactic longitude|
 
-   * - RA
-     - Right ascensions of each globular cluster
-   * - DEC
-     - Declinations of each globular cluster
-   * - l
-   * - b
-   * - Rsun
    
