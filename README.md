@@ -5,6 +5,8 @@ Overview
 
 This package takes the updated Baumgardt et al. 2021 Globular Cluster Catalog data (https://people.smp.uq.edu.au/HolgerBaumgardt/globular/) containing mean radial velocities, proper motion, and orbital parameters, of each globular cluster, and provides a quick visualization of any one or two parameters from that dataset.
 
+[![DOI](https://zenodo.org/badge/506388170.svg)](https://zenodo.org/badge/latestdoi/506388170)
+
 How To Use
 ==========
 
