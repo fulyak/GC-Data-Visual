@@ -1,18 +1,26 @@
 import matplotlib.pyplot as plt 
 import pandas as pd
 import numpy as np 
-
+import os
 def read_headers(file_name='mean_radial_velocities.csv'): 
-	""" Reads the headers into a preferred format from the original dataset, file_name
+	""" Reads the headers into a preferred format from the original dataset, file_name.
     Creates a dictionary that maps parameter names to its corresponding index and a list of units. 
+    
     Args:
+	
         file_name (string): data set file name
+
     Returns:
-        d (dictionary): maps parameter names to its corresponding index in the original dataset
+	tuple: contains:
+	
+		d (dictionary): maps parameter names to its corresponding index in the original dataset
+		
 		u (list): unit names in the order of the parameters in the original dataset
 	"""
-	params_list = pd.read_csv(file_name,delimiter=',',skiprows=[1]).columns
-	unit_list = pd.read_csv(file_name,delimiter=',',skiprows=[0]).columns
+
+	filename = os.path.join(os.path.dirname(__file__),file_name)
+	params_list = pd.read_csv(filename,delimiter=',',skiprows=[1]).columns
+	unit_list = pd.read_csv(filename,delimiter=',',skiprows=[0]).columns
 	d = {}
 	u = []
 	for i in range(len(params_list)):
@@ -23,28 +31,36 @@ def read_headers(file_name='mean_radial_velocities.csv'):
 def read_data(X,Y,file_name='mean_radial_velocities.csv'):
 	""" Reads the numerical data corresponding to the column numbers X, Y from the original dataset, file_name
 	Returns the list of values for the desired parameters.
+	
 	Args: 
 		X (integer): column number of the first desired parameter 
 		Y (integer): column number of the second desired parameter; if no second parameter is desired, Y is N/A
 		file_name (string): data set file name
+	
 	Returns:
-		x (list): list of the parameter values in the Xth column.
-		y (list): (returned only if Y is not N/A) list of the parameter values in the Yth column.
+		tuple or list: contains x only if list, x and y if tuple:
+
+			x (list): list of the parameter values in the Xth column.
+		
+			y (list): (returned only if Y is not N/A) list of the parameter values in the Yth column.
 	"""
+	filename = os.path.join(os.path.dirname(__file__),file_name)
 	if Y != 'N/A':	
-		x,y = pd.read_csv(file_name,skiprows=2,header=None,delimiter=',',usecols=(X,Y)).values.T
+		x,y = pd.read_csv(filename,skiprows=2,header=None,delimiter=',',usecols=(X,Y)).values.T
 		return x,y
 	else:
-		y,x = pd.read_csv(file_name,skiprows=2,header=None,delimiter=',',usecols=(0,X)).values.T
+		y,x = pd.read_csv(filename,skiprows=2,header=None,delimiter=',',usecols=(0,X)).values.T
 		return x
 
 def make_hist(param, x, d, u):
 	""" Makes a histogram plot of the parameter values with the proper labels and units.
+
 	Args:
 		param (list): list of the desired parameter values 
 		x (string): parameter name that the user wants to plot 
 		d (dictionary): dictionary mapping parameter names to its corresponding index
 		u (list): unit names in the corresponding order of the parameters  
+	
 	Returns:
 		None
 	"""
@@ -57,6 +73,7 @@ def make_hist(param, x, d, u):
 def make_scatter(param1, param2, x, y, d, u):
 	""" Makes a scatter plot of the first desired parameter values vs. the second desired 
 	parameter values. The proper labels and units are included in the plot.
+	
 	Args:
 		param1 (list): list of the first desired parameter values 
 		param2 (list): list of the second desired parameter values
@@ -64,6 +81,7 @@ def make_scatter(param1, param2, x, y, d, u):
 		y (string): second parameter name that the user inputs to plot
 		d (dictionary): dictionary mapping parameter names to its corresponding index
 		u (list): unit names in the corresponding order of the parameters
+	
 	Returns:
 		None
 	"""
