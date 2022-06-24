@@ -24,10 +24,25 @@ You will be prompted to enter parameters that you want to plot. Type in the one 
 
 Here is the table of valid parameters:
 
-| Name   |Meaning           |
-| ------ |------------------|
-| RA     |Right ascension   |
-| DEC    |Declination       |
-| l      |Galactic longitude|
+| Name     |Meaning                                                       |
+| -------- |--------------------------------------------------------------|
+| RA       |Right ascension                                               |
+| DEC      |Declination                                                   |
+| l        |Galactic longitude                                            |
+| b        |Galactic latitude                                             |
+| Rsun     |Distance from Sun                                             |
+| R_GC     |Distance from the Galactic centre                             |
+| <RV>     |Radial velocity                                               |
+| mualpha  |Proper motion in right ascension                              |
+| mu_delta |Proper motion in declination                                  |
+| rhopmrade|Correlation coefficient between mualpha and mu_delta          |
+| X        |Distance from the Galactic centre in direction of Sun         |
+| Y        |Distance from the Galactic centre in direction of Solar motion|
+| Z        |Distance above/below galactic plane                           |
+| U        |Velocity in X direction                                       |
+| V        |Velocity in Y direction                                       |
+| W        |Velocity in Z direction                                       |
+| RPERI    |Average perigalactic distance                                 |
+| RAPO     |AVerage apogalactic distance                                  |
 
    
