@@ -7,6 +7,8 @@ Welcome to GC-Data-Visual's documentation!
 ==========================================
 This package takes the updated Baumgardt et al. 2021 Globular Cluster Catalog data (https://people.smp.uq.edu.au/HolgerBaumgardt/globular/) containing mean radial velocities, proper motion, and orbital parameters, of each globular cluster, and provides a quick visualization of any one or two parameters from that dataset.
 
+More details of the package can be found here: https://github.com/fulyak/GC-Data-Visual
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
