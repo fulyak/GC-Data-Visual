@@ -32,7 +32,7 @@ Here is the table of valid parameters:
 | b        |Galactic latitude                                             |
 | Rsun     |Distance from Sun                                             |
 | R_GC     |Distance from the Galactic centre                             |
-| <RV>     |Radial velocity                                               |
+| < RV >   |Radial velocity                                               |
 | mualpha  |Proper motion in right ascension                              |
 | mu_delta |Proper motion in declination                                  |
 | rhopmrade|Correlation coefficient between mualpha and mu_delta          |
