@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt 
 import pandas as pd
 import numpy as np 
-
+import os
 def read_headers(file_name='mean_radial_velocities.csv'): 
 	""" Reads the headers into a preferred format from the original dataset, file_name
     Creates a dictionary that maps parameter names to its corresponding index and a list of units. 
@@ -11,8 +11,9 @@ def read_headers(file_name='mean_radial_velocities.csv'):
         d (dictionary): maps parameter names to its corresponding index in the original dataset
 		u (list): unit names in the order of the parameters in the original dataset
 	"""
-	params_list = pd.read_csv(file_name,delimiter=',',skiprows=[1]).columns
-	unit_list = pd.read_csv(file_name,delimiter=',',skiprows=[0]).columns
+	filename = os.path.join(os.path.dirname(__file__),file_name)
+	params_list = pd.read_csv(filename,delimiter=',',skiprows=[1]).columns
+	unit_list = pd.read_csv(filename,delimiter=',',skiprows=[0]).columns
 	d = {}
 	u = []
 	for i in range(len(params_list)):
@@ -31,11 +32,12 @@ def read_data(X,Y,file_name='mean_radial_velocities.csv'):
 		x (list): list of the parameter values in the Xth column.
 		y (list): (returned only if Y is not N/A) list of the parameter values in the Yth column.
 	"""
+	filename = os.path.join(os.path.dirname(__file__),file_name)
 	if Y != 'N/A':	
-		x,y = pd.read_csv(file_name,skiprows=2,header=None,delimiter=',',usecols=(X,Y)).values.T
+		x,y = pd.read_csv(filename,skiprows=2,header=None,delimiter=',',usecols=(X,Y)).values.T
 		return x,y
 	else:
-		y,x = pd.read_csv(file_name,skiprows=2,header=None,delimiter=',',usecols=(0,X)).values.T
+		y,x = pd.read_csv(filename,skiprows=2,header=None,delimiter=',',usecols=(0,X)).values.T
 		return x
 
 def make_hist(param, x, d, u):
